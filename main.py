@@ -2,24 +2,27 @@ from event_manager import EventManager
 
 manager = EventManager()
 
-def menu():
-    print("""
-==== EVENT PLANNER CLI ====
 
-1. Create Event
-2. View All Events
-3. View Event By ID
-4. Update Event
-5. Mark Event Status
-6. Delete Event
-7. Exit
-""")
+def menu():
+
+    print("\n===== EVENT PLANNER CLI =====")
+
+    print("1. Create Event")
+    print("2. View All Events")
+    print("3. View Event By ID")
+    print("4. Update Event")
+    print("5. Mark Event Status")
+    print("6. Delete Event")
+    print("7. Search Event")
+    print("8. View Upcoming Events")
+    print("9. Exit")
+
 
 while True:
 
     menu()
 
-    choice = input("Choose an option: ")
+    choice = input("Choose option: ")
 
     if choice == "1":
         manager.create_event()
@@ -40,7 +43,13 @@ while True:
         manager.delete_event()
 
     elif choice == "7":
-        print("Goodbye 👋")
+        manager.search_event()
+
+    elif choice == "8":
+        manager.upcoming_events()
+
+    elif choice == "9":
+        print("Goodbye")
         break
 
     else:

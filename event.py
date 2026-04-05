@@ -1,4 +1,5 @@
 class Event:
+
     def __init__(self, event_id, name, date, location, description, status="upcoming"):
         self.event_id = event_id
         self.name = name
@@ -17,12 +18,10 @@ class Event:
             "status": self.status
         }
 
-    def __str__(self):
-        return f"""
-Event ID: {self.event_id}
-Name: {self.name}
-Date: {self.date}
-Location: {self.location}
-Description: {self.description}
-Status: {self.status}
-"""
+    def display(self):
+        print("\nEvent ID:", self.event_id)
+        print("Name:", self.name)
+        print("Date:", self.date)
+        print("Location:", self.location)
+        print("Description:", self.description)
+        print("Status:", self.status)
